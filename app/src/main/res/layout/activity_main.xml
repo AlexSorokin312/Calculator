@@ -1,9 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/calc_bg" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:id="@+id/calculator_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="4">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/_imageBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="4"
+                android:layout_gravity="fill_horizontal"
+                android:drawableTop="@color/purple_200"
+                android:text="@string/_defaultZero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_resultSize" />
+
+            <Button
+                android:id="@+id/_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="3"
+                android:layout_gravity="fill_horizontal"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_clear"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_div"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="1"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_div"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_1"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_2"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_3"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_mult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_mult"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_4"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_5"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_6"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_add"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_7"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_8"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_9"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_sub"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill_horizontal"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_0"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_point"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <Button
+                android:id="@+id/_equal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/DimGrey"
+                android:text="@string/_equals"
+                android:textSize="@dimen/buttonTextSize" />
+
+        </GridLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
