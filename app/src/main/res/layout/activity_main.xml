@@ -33,7 +33,7 @@
                 android:drawableTop="@color/purple_200"
                 android:text="@string/_defaultZero"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="@color/white"
                 android:textSize="@dimen/_resultSize" />
 
