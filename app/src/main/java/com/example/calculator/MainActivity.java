@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final static String CALC_KEY = "calc_key";
     Calculator calc;
     AppCompatTextView textPrint;
     private View.OnClickListener btnZeroClick = new View.OnClickListener() {
@@ -194,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
     }
 
     public void calcResult() throws ArithmeticException {
@@ -243,6 +244,21 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(CALC_KEY, calc);
+    }
+
+    protected void onRestoreInstanceState(Bundle outState) {
+        super.onRestoreInstanceState(outState);
+        calc = outState.getParcelable(CALC_KEY);
+        setCalculatorState();
+    }
+
+    public void setCalculatorState() {
+        textPrint.setText(calc.getText());
+    }
+
     public void initView() {
         textPrint = findViewById(R.id._textPrint);
         calc = new Calculator();
@@ -282,6 +298,5 @@ public class MainActivity extends AppCompatActivity {
         btn_div.setOnClickListener(btnDivClick);
         btn_point.setOnClickListener(btnPointClick);
         btn_equal.setOnClickListener(btnEqualsClick);
-
     }
 }
