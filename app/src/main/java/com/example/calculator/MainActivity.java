@@ -217,10 +217,11 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     result = calc.div();
                 } catch (ArithmeticException E) {
-                    calc.firstNumber = "";
+                    calc.firstNumber = "0";
                     calc.secondNumber = "";
                     calc.operation = ' ';
                     textPrint.setText("");
+                    calc.text="0";
                     return;
                 }
                 afrerCalculation(result);
