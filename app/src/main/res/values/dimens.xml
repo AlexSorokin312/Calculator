@@ -2,4 +2,5 @@
 <resources>
     <dimen name="_resultSize">40sp</dimen>
     <dimen name="buttonTextSize">20sp</dimen>
+    <dimen name="buttonSChangeStyleSize">24sp</dimen>
 </resources>

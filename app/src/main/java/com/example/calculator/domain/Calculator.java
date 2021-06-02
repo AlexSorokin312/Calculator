@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculator.domain;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -31,7 +31,7 @@ public class Calculator implements Parcelable {
     public char operation;
     public double result;
 
-    Calculator() {
+    public Calculator() {
         this.firstNumber = "";
         this.secondNumber = "";
         this.operation = ' ';

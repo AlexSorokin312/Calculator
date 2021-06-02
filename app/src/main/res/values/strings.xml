@@ -18,4 +18,6 @@
     <string name="_0">0</string>
     <string name="_point">.</string>
     <string name="_equals">=</string>
+    <string name="LightTheme">Светлая тема</string>
+    <string name="DarkTheme">Темная тема</string>
 </resources>

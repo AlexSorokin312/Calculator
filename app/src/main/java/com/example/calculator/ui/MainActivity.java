@@ -1,17 +1,19 @@
-package com.example.calculator;
+package com.example.calculator.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.calculator.R;
+import com.example.calculator.domain.Calculator;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ThemeStorage storage;
     public final static String CALC_KEY = "calc_key";
     Calculator calc;
     AppCompatTextView textPrint;
@@ -133,7 +135,22 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-    public void handleSymbol(String symbol) {
+    private View.OnClickListener btn_LightThemeClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            storage.setTheme(AppTheme.CUSTOM);
+            recreate();
+        }
+    };
+    private View.OnClickListener btn_DarkThemeClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            storage.setTheme(AppTheme.DEFAULT);
+            recreate();
+        }
+    };
+
+    private void handleSymbol(String symbol) {
 
         if ((calc.text.contains(".")) && (symbol == ".") && calc.operation == ' ') return;
         if ((calc.operation != ' ') && (symbol == ".")) {
@@ -160,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         textPrint.setText(calc.text);
     }
 
-    public void handleOperation(char oper) {
+    private void handleOperation(char oper) {
         if (calc.text == "") {
             calc.firstNumber = "0";
             calc.text = "0";
@@ -198,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void calcResult() throws ArithmeticException {
+    private void calcResult() throws ArithmeticException {
         double result;
         switch (calc.operation) {
             case '+':
@@ -229,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void afrerCalculation(Double result) {
+    private void afrerCalculation(Double result) {
         calc.text = String.format("%.1f", result);
         ;
         calc.firstNumber = calc.text;
@@ -241,6 +258,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        storage = new ThemeStorage(this);
+        setTheme(storage.getTheme().getResource());
+
         setContentView(R.layout.activity_main);
         initView();
     }
@@ -280,6 +301,8 @@ public class MainActivity extends AppCompatActivity {
         Button btn_mult = findViewById(R.id._mult);
         Button btn_div = findViewById(R.id._div);
         Button btn_equal = findViewById(R.id._equal);
+        Button btn_lightTheme = findViewById(R.id.lightTheme);
+        Button btn_darkTheme = findViewById(R.id.darkTheme);
 
         btn_0.setOnClickListener(btnZeroClick);
         btn_1.setOnClickListener(btnOneClick);
@@ -299,5 +322,7 @@ public class MainActivity extends AppCompatActivity {
         btn_div.setOnClickListener(btnDivClick);
         btn_point.setOnClickListener(btnPointClick);
         btn_equal.setOnClickListener(btnEqualsClick);
+        btn_lightTheme.setOnClickListener(btn_LightThemeClick);
+        btn_darkTheme.setOnClickListener(btn_DarkThemeClick);
     }
 }
