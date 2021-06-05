@@ -6,40 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/calc_bg" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/lightTheme"
+                android:id="@+id/changeTheme"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/LightTheme"
+                android:text="@string/selectTheme"
                 android:textSize="@dimen/buttonSChangeStyleSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/darkTheme"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/DarkTheme"
-                android:textSize="@dimen/buttonSChangeStyleSize"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lightTheme" />
 
             <GridLayout
                 android:id="@+id/calculator_table"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:columnCount="4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +50,7 @@
                     android:layout_columnSpan="4"
                     android:layout_gravity="fill_horizontal"
                     android:text="@string/_defaultZero"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textColorHint="@color/white"
                     android:textSize="@dimen/_resultSize" />

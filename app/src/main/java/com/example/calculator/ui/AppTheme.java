@@ -8,8 +8,6 @@ public enum AppTheme {
     CUSTOM(R.style.MyLightTheme, "CUSTOM"),
     DEFAULT(R.style.MyDarkTheme, "DEFAULT");
 
-
-
     private String key;
     private int resource;
 

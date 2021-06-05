@@ -5,26 +5,6 @@ import android.os.Parcelable;
 
 public class Calculator implements Parcelable {
 
-    public String getText() {
-        return text;
-    }
-
-    public String getFirstNumber() {
-        return firstNumber;
-    }
-
-    public String getSecondNumber() {
-        return secondNumber;
-    }
-
-    public char getOperation() {
-        return operation;
-    }
-
-    public double getResult() {
-        return result;
-    }
-
     public String text; //Храним в виде строки выражение вводимое пользователем
     public String firstNumber;
     public String secondNumber;
@@ -74,11 +54,16 @@ public class Calculator implements Parcelable {
     }
 
     public double div() throws ArithmeticException {
-        if (Double.valueOf(this.secondNumber) == 0) throw new ArithmeticException("Деление на ноль");
+        if (Double.valueOf(this.secondNumber) == 0)
+            throw new ArithmeticException("Деление на ноль");
         else {
             result = Double.valueOf(firstNumber) / Double.valueOf(secondNumber);
             return result;
         }
+    }
+
+    public String getText() {
+        return text;
     }
 
     @Override

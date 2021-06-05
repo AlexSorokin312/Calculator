@@ -20,4 +20,5 @@
     <string name="_equals">=</string>
     <string name="LightTheme">Светлая тема</string>
     <string name="DarkTheme">Темная тема</string>
+    <string name="selectTheme">Выбрать тему</string>
 </resources>

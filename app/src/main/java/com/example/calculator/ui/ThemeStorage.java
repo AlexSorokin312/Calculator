@@ -2,6 +2,7 @@ package com.example.calculator.ui;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -17,6 +18,7 @@ public class ThemeStorage {
     }
 
     public AppTheme getTheme() {
+
         String key = sharedPreferences.getString(KEY_APP_THEME, AppTheme.DEFAULT.getKey());
 
         for (AppTheme theme : AppTheme.values()) {
@@ -24,7 +26,6 @@ public class ThemeStorage {
                 return theme;
             }
         }
-
         throw new IllegalStateException("Wrong!");
     }
 
