@@ -42,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
         initViews();
     }
 
-    public void initViews() {
+    private void initViews() {
         Button btn_lightTheme = findViewById(R.id.lightTheme);
         Button btn_darkTheme = findViewById(R.id.darkTheme);
         btn_lightTheme.setOnClickListener(btn_LightThemeClick);

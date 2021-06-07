@@ -17,11 +17,11 @@ import com.example.calculator.domain.HandleOperaion;
 
 public class MainActivity extends AppCompatActivity {
 
-    public HandleOperaion handler = new HandleOperaion();
-    public final static String CALC_KEY = "CALC_KEY";
-    public Calculator calc;
-    public ThemeStorage storage;
-    static AppCompatTextView textPrint;
+    private HandleOperaion handler = new HandleOperaion();
+    private final static String CALC_KEY = "CALC_KEY";
+    private Calculator calc;
+    private ThemeStorage storage;
+    private static AppCompatTextView textPrint;
 
     private final int[] numberButtonIds = new int[]{R.id._0, R.id._1, R.id._2, R.id._3,
             R.id._4, R.id._5, R.id._6, R.id._7, R.id._8, R.id._9};
@@ -46,11 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener btnClearClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            calc.firstNumber = "";
-            calc.secondNumber = "";
-            calc.text = "";
-            calc.operation = ' ';
-            textPrint.setText(calc.text);
+            handler.clear();
         }
     };
 
@@ -72,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
-    public void initView() {
+    private void initView() {
         textPrint = findViewById(R.id._textPrint);
         calc = new Calculator();
         setNumberButtonListeners();

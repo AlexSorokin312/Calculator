@@ -107,6 +107,14 @@ public class HandleOperaion {
         }
     }
 
+    public void clear(){
+        calc.firstNumber = "";
+        calc.secondNumber = "";
+        calc.text = "";
+        calc.operation = ' ';
+        MainActivity.textPrint(calc.text);
+    }
+
     private void afrerCalculation(Double result) {
         calc.text = String.format("%.1f", result);
         calc.firstNumber = calc.text;
